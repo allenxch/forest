@@ -1,0 +1,14 @@
+# Build output
+output/
+
+# Nix
+result
+.direnv/
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store

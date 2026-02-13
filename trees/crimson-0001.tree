@@ -1,0 +1,17 @@
+\title{About This Forest}
+\date{2026-02-13}
+\taxon{note}
+\tag{meta}
+
+\p{This forest contains my notes on various topics in mathematics and
+computer science, with a focus on:}
+
+\ul{
+  \li{Type theory and Homotopy Type Theory}
+  \li{Category theory and topos theory}
+  \li{Functional programming (Haskell, PureScript, Scheme)}
+  \li{Mathematical visualization and animation}
+}
+
+\p{Notes are organized as a Zettelkasten - small, interconnected atomic
+ideas that can be composed into larger structures.}

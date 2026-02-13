@@ -1,0 +1,7 @@
+[forest]
+trees = ["trees"]
+assets = ["assets"]
+home = "index"
+url = "https://allenxch.github.io/forest/"
+
+prefixes = ["crimson"]

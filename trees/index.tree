@@ -1,0 +1,10 @@
+\title{Home}
+\tag{root}
+\import{macros}
+
+\p{Welcome to my forest of notes.}
+
+\p{This is a personal knowledge base covering mathematics, type theory,
+category theory, and related topics.}
+
+\transclude{crimson-0001}
