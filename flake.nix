@@ -1,30 +1,27 @@
 {
   description = "Personal forester notes";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    forester = {
-      url = "sourcehut:~jonsterling/ocaml-forester";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = { self, nixpkgs, flake-utils, forester }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        foresterPkg = forester.packages.${system}.default;
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          buildInputs = [
-            foresterPkg
-            pkgs.texlive.combined.scheme-medium
-            pkgs.python3
-            pkgs.fswatch
-          ];
-        };
-      }
-    );
+  outputs = { self, nixpkgs }:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [
+          pkgs.texlive.combined.scheme-medium
+          pkgs.python3
+          pkgs.fswatch
+        ];
+
+        shellHook = ''
+          export PATH="$HOME/.opam/default/bin:$PATH"
+          if ! command -v forester &> /dev/null; then
+            echo "Forester not found. Install with: opam install forester"
+          fi
+        '';
+      };
+    };
 }

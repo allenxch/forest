@@ -10,10 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
 
-      - uses: cachix/install-nix-action@v27
+      - uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: 5.x
 
-      - run: nix develop --command forester build forest.toml
+      - run: opam install forester -y
+
+      - run: opam exec -- forester build forest.toml
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
