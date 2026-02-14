@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="default.xsl"?>
+<fr:tree toc="true" numbered="true" show-heading="true" show-metadata="true" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+  <fr:frontmatter>
+    <fr:anchor>243</fr:anchor>
+    <fr:addr type="user">crimson-0001</fr:addr>
+    <fr:route>crimson-0001.xml</fr:route>
+    <fr:title text="About This Forest">About This Forest</fr:title>
+    <fr:taxon>Note</fr:taxon>
+    <fr:date>
+      <fr:year>2026</fr:year>
+      <fr:month>2</fr:month>
+      <fr:day>13</fr:day>
+    </fr:date>
+    <fr:authors />
+  </fr:frontmatter>
+  <fr:mainmatter>
+    <fr:p>This forest contains my notes on various topics in mathematics and
+computer science, with a focus on:</fr:p>
+    <fr:ul><fr:li>Type theory and Homotopy Type Theory</fr:li>
+  <fr:li>Category theory and topos theory</fr:li>
+  <fr:li>Functional programming (Haskell, PureScript, Scheme)</fr:li>
+  <fr:li>Mathematical visualization and animation</fr:li></fr:ul>
+    <fr:p>Notes are organized as a Zettelkasten - small, interconnected atomic
+ideas that can be composed into larger structures.</fr:p>
+  </fr:mainmatter>
+  <fr:backmatter>
+    <fr:tree toc="false" numbered="false" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+      <fr:frontmatter>
+        <fr:title text="Context">Context</fr:title>
+        <fr:authors />
+      </fr:frontmatter>
+      <fr:mainmatter>
+        <fr:tree toc="true" numbered="false" show-heading="true" show-metadata="true" expanded="false" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+          <fr:frontmatter>
+            <fr:anchor>244</fr:anchor>
+            <fr:addr type="user">index</fr:addr>
+            <fr:route>index.xml</fr:route>
+            <fr:title text="Home">Home</fr:title>
+            <fr:authors />
+          </fr:frontmatter>
+          <fr:mainmatter>
+            <fr:p>Welcome to my forest of notes.</fr:p>
+            <fr:p>This is a personal knowledge base covering mathematics, type theory,
+category theory, and related topics.</fr:p>
+            <fr:tree toc="true" numbered="true" show-heading="true" show-metadata="false" expanded="true" root="false" xmlns:fr="http://www.jonmsterling.com/jms-005P.xml">
+              <fr:frontmatter>
+                <fr:anchor>245</fr:anchor>
+                <fr:addr type="user">crimson-0001</fr:addr>
+                <fr:route>crimson-0001.xml</fr:route>
+                <fr:title text="About This Forest">About This Forest</fr:title>
+                <fr:taxon>Note</fr:taxon>
+                <fr:date>
+                  <fr:year>2026</fr:year>
+                  <fr:month>2</fr:month>
+                  <fr:day>13</fr:day>
+                </fr:date>
+                <fr:authors />
+              </fr:frontmatter>
+              <fr:mainmatter>
+                <fr:p>This forest contains my notes on various topics in mathematics and
+computer science, with a focus on:</fr:p>
+                <fr:ul><fr:li>Type theory and Homotopy Type Theory</fr:li>
+  <fr:li>Category theory and topos theory</fr:li>
+  <fr:li>Functional programming (Haskell, PureScript, Scheme)</fr:li>
+  <fr:li>Mathematical visualization and animation</fr:li></fr:ul>
+                <fr:p>Notes are organized as a Zettelkasten - small, interconnected atomic
+ideas that can be composed into larger structures.</fr:p>
+              </fr:mainmatter>
+              <fr:backmatter />
+            </fr:tree>
+          </fr:mainmatter>
+          <fr:backmatter />
+        </fr:tree>
+      </fr:mainmatter>
+      <fr:backmatter />
+    </fr:tree>
+  </fr:backmatter>
+</fr:tree>
