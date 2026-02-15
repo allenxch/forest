@@ -11,15 +11,39 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
-          pkgs.texlive.combined.scheme-medium
+          # OCaml/opam dependencies
+          pkgs.opam
+          pkgs.ocaml
+          pkgs.gcc
+          pkgs.pkg-config
+          pkgs.gmp
+          pkgs.libev
+
+          # For LaTeX rendering (tikz-cd diagrams)
+          (pkgs.texlive.combine {
+            inherit (pkgs.texlive)
+              scheme-medium
+              standalone
+              tikz-cd
+              pgf
+              tikzfill
+              dvisvgm;
+          })
+
+          # Development utilities
           pkgs.python3
           pkgs.fswatch
         ];
 
         shellHook = ''
-          export PATH="$HOME/.opam/default/bin:$PATH"
+          eval $(opam env --switch=forester5)
           if ! command -v forester &> /dev/null; then
-            echo "Forester not found. Install with: opam install forester"
+            echo "Forester not found in forester5 switch."
+            echo "Create the switch and install forester with:"
+            echo "  opam switch create forester5 5.3.0"
+            echo "  opam install forester"
+          else
+            echo "Forester $(forester --version) ready"
           fi
         '';
       };

@@ -6,7 +6,7 @@ echo "Building forest..."
 forester build forest.toml
 
 # Deploy to gh-pages branch
-cd output
+cd output/forest
 git init
 git add -A
 git commit -m "deploy"

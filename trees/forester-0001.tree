@@ -1,0 +1,188 @@
+\title{Tree Syntax Guide}
+\date{2026-02-15}
+\taxon{reference}
+\tag{forester}
+\tag{syntax}
+
+\p{Tree files use a LaTeX-like markup language. This guide covers the basic syntax with examples showing both the source code and rendered output.}
+
+\subtree{
+  \title{Basic Structure}
+
+  \p{Every tree starts with metadata commands:}
+
+  \pre{\startverb
+\title{My Note}
+\date{2026-02-13}
+\taxon{note}
+\tag{math}
+\import{macros}
+\stopverb}
+}
+
+\subtree{
+  \title{Text Formatting}
+
+  \p{\strong{Source:}}
+  \pre{\startverb
+\p{A paragraph with \em{emphasis} and \strong{bold}.}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  \p{A paragraph with \em{emphasis} and \strong{bold}.}
+}
+
+\subtree{
+  \title{Mathematics}
+
+  \p{\strong{Inline math source:}}
+  \pre{\startverb
+\p{The Pythagorean theorem: #{x^2 + y^2 = z^2}}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  \p{The Pythagorean theorem: #{x^2 + y^2 = z^2}}
+
+  \p{\strong{Display math source:}}
+  \pre{\startverb
+##{
+  \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  ##{
+    \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+  }
+}
+
+\subtree{
+  \title{Lists}
+
+  \p{\strong{Unordered list source:}}
+  \pre{\startverb
+\ul{
+  \li{First item}
+  \li{Second item}
+  \li{Third item}
+}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  \ul{
+    \li{First item}
+    \li{Second item}
+    \li{Third item}
+  }
+
+  \p{\strong{Ordered list source:}}
+  \pre{\startverb
+\ol{
+  \li{Step one}
+  \li{Step two}
+  \li{Step three}
+}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  \ol{
+    \li{Step one}
+    \li{Step two}
+    \li{Step three}
+  }
+}
+
+\subtree{
+  \title{Code}
+
+  \p{\strong{Inline code source:}}
+  \pre{\startverb
+\p{Use \code{forester build} to compile.}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  \p{Use \code{forester build} to compile.}
+
+  \p{\strong{Code block source:}}
+  \pre{\startverb
+\pre{\startverb
+def hello():
+    print("Hello, World!")
+\ stopverb}
+\stopverb}
+
+  \p{\strong{Rendered:}}
+  \pre{\startverb
+def hello():
+    print("Hello, World!")
+\stopverb}
+}
+
+\subtree{
+  \title{Command Reference}
+
+  \p{Common commands:}
+
+  \pre{\startverb
+\title{...}       - Note title
+\date{YYYY-MM-DD} - Date
+\taxon{...}       - Category (note, definition, theorem, etc.)
+\tag{...}         - Tags
+\p{...}           - Paragraph
+\em{...}          - Italic
+\strong{...}      - Bold
+\code{...}        - Inline code
+#{...}            - Inline math
+##{...}           - Display math
+\transclude{id}   - Include another tree
+\import{macros}   - Import macro definitions
+\stopverb}
+}
+
+\subtree{
+  \title{Creating New Trees}
+
+  \p{Use the forester CLI to create new trees:}
+
+  \pre{\startverb
+forester new --dest=trees --prefix=xxx
+# Creates: trees/xxx-XXXX.tree
+\stopverb}
+
+  \p{Tree IDs use base-36 (0-9, A-Z), allowing ~1.6 million unique IDs per prefix.}
+}
+
+\subtree{
+  \title{Macros}
+
+  \p{Define reusable macros in \code{macros.tree}:}
+
+  \pre{\startverb
+\def\cat[x]{#{\mathbf{#x}}}
+\def\Set{\cat{Set}}
+\def\N{#{\mathbb{N}}}
+\stopverb}
+
+  \p{Then use them in other trees:}
+
+  \pre{\startverb
+\import{macros}
+\p{Consider the category \Set.}
+
+\stopverb}
+
+\p{Example of a commutative diagram:}
+
+\tex{
+  \usepackage{tikz-cd}
+  \usetikzlibrary{bending}
+}{
+  \begin{tikzcd}
+    & Y \\
+    X && Z
+    \arrow["g", bend left, from=1-2, to=2-3]
+    \arrow["f", bend left, from=2-1, to=1-2]
+    \arrow["{f \circ g}"', from=2-1, to=2-3]
+  \end{tikzcd}
+}
+}

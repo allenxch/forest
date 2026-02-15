@@ -1,6 +1,5 @@
 [forest]
 trees = ["trees"]
 assets = ["assets"]
-theme = "theme"
 home = "index"
 url = "https://allenxch.github.io/forest/"

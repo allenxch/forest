@@ -4,7 +4,8 @@
 
 \p{Welcome to my forest of notes.}
 
-\p{This is a personal knowledge base covering mathematics, type theory,
-category theory, and related topics.}
+\p{This is a personal knowledge base and blog system.}
+
+\p{I intend to eventually populate this forest with notes from all aspects of my life.}
 
 \transclude{red-0001}
